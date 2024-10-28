@@ -9,6 +9,10 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 - L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 Buon lavoro! */
 
+"use strict";
+
+console.clear();
+
 const priceKm = 0.21;
 console.log ("Benvenuti sul nostri treno, la informiamo che la tariffa per viaggiare sulle nostre tratte è di: " + priceKm + " al km.");
 
@@ -22,6 +26,19 @@ console.log ("Lo sconto del " + seniorDiscount + "% è applicato a tutti i bigli
 
 const km = parseInt(prompt("Per acquistare un biglietto inserisca di seguito la lunghezza della tratta che deve percorre in km."));
 console.log ("La tratta che deve percorre è di " + km + "km");
+
+const age = parseInt(prompt("Inserisca di seguito la sua età cosi da poter verificare se ha diritto a uno degli sconti della nostra linea ferroviaria"));
+
+console.log ("La tratta che deve percorre è di " + km + "km");
+let price = km * 0.21;
+console.log ("Il prezzo del biglietto per un utente che non ha diritto ad alcuno sconto è di: " + price + "€");
+let discount = 0.00;
+console.log ("Per via della sua età sul suo biglietto verrà applicato uno sconto del " + discount + "%");
+
+if (age < juniorAge){
+
+}
+
 
 
 
