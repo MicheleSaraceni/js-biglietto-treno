@@ -18,25 +18,32 @@ console.log ("Benvenuti sul nostri treno, la informiamo che la tariffa per viagg
 
 const juniorDiscount = 20;
 const juniorAge = 18;
-console.log ("Lo sconto del " + juniorDiscount + "% è applicato a tutti i biglietti acquistati da persone con un età inferiore ai " + juniorAge + "anni di età.");
+console.log ("Lo sconto del " + juniorDiscount + "% è applicato a tutti i biglietti acquistati da persone con un età inferiore ai " + juniorAge + " anni di età.");
 
 const seniorDiscount = 40;
 const seniorAge = 65;
-console.log ("Lo sconto del " + seniorDiscount + "% è applicato a tutti i biglietti acquistati da persone con un età uguale o superiore ai " + seniorAge + "anni di età.");
+console.log ("Lo sconto del " + seniorDiscount + "% è applicato a tutti i biglietti acquistati da persone con un età uguale o superiore ai " + seniorAge + " anni di età.");
 
 const km = parseInt(prompt("Per acquistare un biglietto inserisca di seguito la lunghezza della tratta che deve percorre in km."));
 console.log ("La tratta che deve percorre è di " + km + "km");
 
 const age = parseInt(prompt("Inserisca di seguito la sua età cosi da poter verificare se ha diritto a uno degli sconti della nostra linea ferroviaria"));
 
-console.log ("La tratta che deve percorre è di " + km + "km");
 let price = km * 0.21;
-console.log ("Il prezzo del biglietto per un utente che non ha diritto ad alcuno sconto è di: " + price + "€");
+console.log ("Il prezzo del biglietto per un utente che non ha diritto ad alcuno sconto è di: " + Math.round(price * 100) / 100 + "€");
+
 let discount = 0.00;
-console.log ("Per via della sua età sul suo biglietto verrà applicato uno sconto del " + discount + "%");
 
 if (age < juniorAge){
-
+    discount = price * 20 / 100;
+    price = price - discount;
+    console.log ("Per via della sua età sul suo biglietto verrà applicato uno sconto di " + Math.round(discount * 100) / 100 + "€, pertanto il prezzo finale del suo biglietto è di: " + Math.round(price * 100) / 100 + "€");
+} else if(age >= seniorAge){
+    discount = price * 40 / 100;
+    price = price - discount;
+    console.log ("Per via della sua età sul suo biglietto verrà applicato uno sconto del " + Math.round(discount * 100) / 100 + "€, pertanto il prezzo finale del suo biglietto è di: " + Math.round(price * 100) / 100 + "€");
+} else{
+    console.log ("Ci dispiace informarla che per via della sua età il costo del suo biglietto rimarra invariato non potendo usufruire di alcuno sconto, pertanto il prezzo del suo biglietto è di: " + Math.round(price * 100) / 100 + "€");
 }
 
 
